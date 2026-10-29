@@ -2,13 +2,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="ZLIeRiEKofyNifewtGCOL6HlMwUd8auV0vNrkAw1sJw" >
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Haron Tech Solutions provides web development, software solutions, database management, IT support and ICT training in Kenya.">
+
+  <meta name="google-site-verification"
+    content="ZLIeRiEKofyNifewtGCOL6HlMwUd8auV0vNrkAw1sJw">
+
+  <meta name="description"
+    content="Haron Tech Solutions in Kenya offers web development, software solutions, database management, IT support, networking, cloud services and ICT training.">
+
+  <meta name="theme-color" content="#071a35">
+  <meta property="og:title" content="Haron Tech Solutions | IT Services in Kenya">
+  <meta property="og:description"
+    content="Practical, reliable and affordable technology solutions for businesses, schools and individuals in Kenya.">
+  <meta property="og:type" content="website">
+
   <title>Haron Tech Solutions | IT Services in Kenya</title>
 
   <style>
+    :root {
+      --navy: #071a35;
+      --navy-light: #102b50;
+      --blue: #0866f5;
+      --cyan: #36c5ff;
+      --light: #eef5ff;
+      --text: #24364b;
+      --muted: #63748b;
+      --white: #ffffff;
+      --border: #dce7f5;
+      --shadow: 0 12px 35px rgba(7, 26, 53, 0.08);
+      --radius: 16px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -16,225 +41,862 @@
       scroll-behavior: smooth;
     }
 
-    :root {
-      --navy: #071a35;
-      --blue: #0866f5;
-      --light: #eef5ff;
-      --text: #24364b;
-    }
-
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+      background: white;
     }
 
     a {
+      color: inherit;
       text-decoration: none;
     }
 
-    header {
-      background: white;
-      padding: 16px 7%;
-      display: flex;
-      justify-content: space-between;
+    button, input, textarea, select {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 88%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 82px 0;
+      scroll-margin-top: 85px;
+    }
+
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 42px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      color: var(--navy);
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 39px);
+      margin-bottom: 14px;
+    }
+
+    .section-heading p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      box-shadow: 0 2px 10px #00000010;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 22px;
+      border: 2px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #004fc5;
+      border-color: #004fc5;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(255,255,255,0.7);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--navy);
+      border-color: white;
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e8eef7;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
+      font-size: 21px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .logo span {
       color: var(--blue);
-      font-size: 23px;
-      font-weight: 800;
+    }
+
+    .logo small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-top: 4px;
     }
 
     nav {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 22px;
+      gap: 21px;
     }
 
     nav a {
+      font-size: 14px;
+      font-weight: 700;
       color: var(--navy);
-      font-weight: bold;
     }
 
     nav a:hover {
       color: var(--blue);
     }
 
-    .hero {
-      background: linear-gradient(120deg, #071a35, #0754a8);
+    .nav-cta {
+      padding: 9px 14px;
+      background: var(--blue);
       color: white;
-      padding: 100px 7%;
-      text-align: center;
+      border-radius: 7px;
+    }
+
+    .nav-cta:hover {
+      color: white;
+      background: #004fc5;
+    }
+
+    /* Hero */
+
+    .hero {
+      color: white;
+      background:
+        radial-gradient(ellipse at 85% 20%, #1677ff55, transparent 38%),
+        linear-gradient(125deg, #071a35, #0a3263 75%, #0754a8);
+      padding: 100px 0 92px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .hero .eyebrow {
+      color: var(--cyan);
     }
 
     .hero h1 {
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 1.2;
-      margin-bottom: 20px;
+      color: white;
+      font-size: clamp(38px, 5.4vw, 65px);
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
     }
 
     .hero h1 span {
-      color: #36c5ff;
+      color: var(--cyan);
     }
 
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto 28px;
+    .hero-copy {
+      max-width: 640px;
       font-size: 18px;
       color: #e0edff;
+      margin-bottom: 30px;
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--blue);
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-note {
+      margin-top: 25px;
+      color: #cfdef2;
+      font-size: 13px;
+    }
+
+    .hero-panel {
+      padding: 30px;
+      border: 1px solid #ffffff2b;
+      background: #ffffff0d;
+      border-radius: 22px;
+      box-shadow: 0 25px 70px #00000020;
+    }
+
+    .hero-panel h2 {
+      font-size: 24px;
       color: white;
-      padding: 13px 24px;
-      border-radius: 7px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
+      margin-bottom: 20px;
     }
 
-    .btn:hover {
-      background: #004dc4;
+    .hero-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 15px 0;
+      border-bottom: 1px solid #ffffff24;
     }
 
-    section {
-      padding: 70px 7%;
+    .hero-feature:last-child {
+      border-bottom: 0;
     }
 
-    .section-title {
-      text-align: center;
-      color: var(--navy);
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .section-intro {
-      text-align: center;
-      margin: 0 auto 35px;
-      max-width: 650px;
-      color: #61738a;
-    }
-
-    .services {
+    .feature-icon {
       display: grid;
-      grid-template-columns: repeat(
-        auto-fit, minmax(230px, 1fr)
-      );
+      place-items: center;
+      flex: 0 0 43px;
+      height: 43px;
+      border-radius: 10px;
+      background: #ffffff17;
+      color: var(--cyan);
+      font-size: 21px;
+    }
+
+    .hero-feature strong {
+      display: block;
+      color: white;
+      margin-bottom: 3px;
+    }
+
+    .hero-feature p {
+      color: #d4e3f6;
+      font-size: 13px;
+    }
+
+    /* Service cards */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
-    .service-card {
+    .card {
       padding: 27px;
-      border: 1px solid #dce7f5;
-      border-radius: 12px;
       background: white;
-      transition: 0.2s;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: transform .2s, box-shadow .2s;
     }
 
-    .service-card:hover {
+    .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px #071a3512;
+      box-shadow: var(--shadow);
     }
 
-    .service-card .icon {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .service-card h3 {
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-
-    .about {
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 13px;
       background: var(--light);
-      text-align: center;
+      font-size: 26px;
+      margin-bottom: 19px;
     }
 
-    .about p {
-      max-width: 800px;
-      margin: 15px auto 25px;
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 11px;
     }
 
-    .contact {
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-copy p {
+      margin-bottom: 17px;
+      color: var(--muted);
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 23px 0;
+    }
+
+    .check-list li {
+      margin: 11px 0;
+      font-weight: 700;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--blue);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .about-panel {
+      padding: 34px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-panel h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .about-panel p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .about-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Reasons */
+
+    .reason-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .reason {
+      padding: 24px;
+      border-radius: 13px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .reason h3 {
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .reason p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Process */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .process-step {
+      padding: 24px;
+      border-radius: 14px;
+      background: var(--light);
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 17px;
+    }
+
+    .process-step h3 {
+      font-size: 18px;
+      margin-bottom: 9px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Portfolio */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 23px;
+    }
+
+    .project {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       background: white;
     }
 
-    .contact-box {
-      max-width: 700px;
-      margin: auto;
-      background: var(--light);
-      padding: 30px;
-      border-radius: 12px;
+    .project-visual {
+      min-height: 180px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, #071a35, #0866f5);
+      color: white;
     }
 
-    .contact-box p {
-      margin: 12px 0;
+    .project-visual span {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .project-visual strong {
+      font-size: 21px;
+    }
+
+    .project-body {
+      padding: 23px;
+    }
+
+    .sample-label {
+      display: inline-block;
+      background: #fff3d6;
+      color: #805400;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      padding: 5px 8px;
+      border-radius: 5px;
+      margin-bottom: 13px;
+    }
+
+    .project-body h3 {
+      font-size: 19px;
+      margin-bottom: 9px;
+    }
+
+    .project-body p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .portfolio-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 25px;
+    }
+
+    /* CTA banner */
+
+    .cta-banner {
+      padding: 52px;
+      border-radius: 20px;
+      background: linear-gradient(120deg, var(--navy), #0754a8);
+      text-align: center;
+      color: white;
+    }
+
+    .cta-banner h2 {
+      color: white;
+    }
+
+    .cta-banner p {
+      max-width: 640px;
+      margin: 0 auto 24px;
+      color: #dce9fb;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 13px;
+      background: white;
+    }
+
+    summary {
+      padding: 19px 22px;
+      color: var(--navy);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    details p {
+      padding: 0 22px 20px;
+      color: var(--muted);
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .contact-info {
+      padding: 29px;
+      background: var(--navy);
+      color: white;
+      border-radius: var(--radius);
+    }
+
+    .contact-info h3 {
+      color: white;
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .contact-info > p {
+      color: #d4e3f6;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #ffffff24;
       overflow-wrap: anywhere;
     }
 
-    .contact-box a {
-      color: var(--blue);
+    .contact-item:last-of-type {
+      border-bottom: 0;
     }
 
-    form {
-      margin-top: 25px;
-      display: grid;
-      gap: 14px;
+    .contact-item small {
+      display: block;
+      color: #b9cce5;
+      margin-bottom: 4px;
     }
 
-    input, textarea, select {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #cbd7e6;
-      border-radius: 6px;
-      font: inherit;
+    .contact-item a {
+      color: white;
+      font-weight: 700;
+    }
+
+    .contact-item a:hover {
+      color: var(--cyan);
+    }
+
+    .contact-form {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       background: white;
     }
 
-    textarea {
-      min-height: 120px;
+    .contact-form h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .contact-form > p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #cbd7e6;
+      border-radius: 7px;
+      background: white;
+      color: var(--text);
+    }
+
+    .field textarea {
+      min-height: 130px;
       resize: vertical;
     }
 
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      outline: 2px solid #0866f533;
+      border-color: var(--blue);
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 13px;
+    }
+
+    /* Footer */
+
     footer {
-      background: var(--navy);
+      background: #041226;
+      color: #d0dced;
+      padding: 48px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand {
       color: white;
-      text-align: center;
-      padding: 28px 7%;
+      font-size: 21px;
+      font-weight: 900;
+      margin-bottom: 12px;
     }
 
-    footer p {
-      margin: 5px;
+    .footer-grid p {
+      color: #bdcbe0;
+      font-size: 14px;
     }
 
-    @media (max-width: 600px) {
-      header {
-        justify-content: center;
+    .footer-grid h3 {
+      color: white;
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin: 7px 0;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid #ffffff20;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: #aebfd7;
+    }
+
+    /* Floating WhatsApp */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 17px;
+      background: #128c7e;
+      color: white;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 25px #00000025;
+    }
+
+    .whatsapp-float:hover {
+      background: #0b7468;
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-icon {
+      font-size: 21px;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 950px) {
+      .nav-inner {
+        padding: 15px 0;
+        flex-direction: column;
       }
 
       nav {
         justify-content: center;
-        gap: 12px;
+        gap: 14px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 38px;
+      }
+
+      .service-grid,
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .reason-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+
+      .section {
+        padding: 58px 0;
       }
 
       .hero {
-        padding: 70px 6%;
+        padding: 68px 0;
       }
 
-      section {
-        padding: 50px 6%;
+      .hero h1 {
+        letter-spacing: -0.8px;
       }
 
-      .contact-box {
-        padding: 20px;
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-panel,
+      .about-panel,
+      .contact-info,
+      .contact-form {
+        padding: 23px;
+      }
+
+      .service-grid,
+      .portfolio-grid,
+      .reason-grid,
+      .process-grid,
+      .footer-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 10px 14px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .logo {
+        text-align: center;
+      }
+
+      .cta-banner {
+        padding: 32px 20px;
+      }
+
+      .whatsapp-float {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 15px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
       }
     }
   </style>
@@ -243,182 +905,656 @@
 <body>
 
   <header>
-    <a class="logo" href="#home">HTS | Haron Tech Solutions</a>
+    <div class="container nav-inner">
+      <a class="logo" href="#home">
+        <span>HTS</span> | Haron Tech Solutions
+        <small>TECHNOLOGY • INNOVATION • SUPPORT</small>
+      </a>
 
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contact" class="nav-cta">Contact Us</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+    <!-- Hero section -->
+
     <section class="hero" id="home">
-      <h1>Innovative IT Solutions<br>
-        <span>For a Smarter Tomorrow</span>
-      </h1>
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Your Technology Partner in Kenya</span>
 
-      <p>
-        Welcome to Haron Tech Solutions. We provide practical,
-        reliable and affordable technology services to help
-        businesses, schools and individuals succeed.
-      </p>
+          <h1>
+            Innovative IT Solutions
+            <span>For a Smarter Tomorrow</span>
+          </h1>
 
-      <a class="btn" href="#services">Explore Our Services</a>
-      <a class="btn" href="#contact"
-         style="margin-left: 8px; background: #173c66;">
-        Contact Us
-      </a>
-    </section>
-
-    <section id="services">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-intro">
-        Technology services designed to meet your needs
-        and help your business grow.
-      </p>
-
-      <div class="services">
-
-        <article class="service-card">
-          <div class="icon">💻</div>
-          <h3>Web Development</h3>
-          <p>
-            Professional, responsive websites for businesses,
-            organisations and individuals.
+          <p class="hero-copy">
+            Welcome to Haron Tech Solutions. We help businesses,
+            schools, students and individuals use technology through
+            practical, reliable and affordable digital solutions.
           </p>
-        </article>
 
-        <article class="service-card">
-          <div class="icon">⚙️</div>
-          <h3>Software Development</h3>
-          <p>
-            Practical software applications tailored to
-            specific business and user requirements.
+          <div class="hero-actions">
+            <a class="btn" href="#services">Explore Our Services →</a>
+            <a class="btn btn-outline" href="#contact">Discuss Your Project</a>
+          </div>
+
+          <p class="hero-note">
+            Web development · IT support · Software · ICT training
           </p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="icon">🗄️</div>
-          <h3>Database Management</h3>
-          <p>
-            Database design, data organisation, maintenance
-            and reporting solutions.
-          </p>
-        </article>
+        <div class="hero-panel">
+          <h2>Technology that works for you</h2>
 
-        <article class="service-card">
-          <div class="icon">☁️</div>
-          <h3>Cloud Solutions</h3>
-          <p>
-            Assistance with cloud services, file sharing,
-            backups and online collaboration.
-          </p>
-        </article>
+          <div class="hero-feature">
+            <div class="feature-icon">💻</div>
+            <div>
+              <strong>Digital Solutions</strong>
+              <p>Websites and software designed around your needs.</p>
+            </div>
+          </div>
 
-        <article class="service-card">
-          <div class="icon">🛡️</div>
-          <h3>IT Support</h3>
-          <p>
-            Technical troubleshooting, system maintenance
-            and general computer support.
-          </p>
-        </article>
+          <div class="hero-feature">
+            <div class="feature-icon">⚙️</div>
+            <div>
+              <strong>Practical IT Support</strong>
+              <p>Help with computer systems, maintenance and troubleshooting.</p>
+            </div>
+          </div>
 
-        <article class="service-card">
-          <div class="icon">📚</div>
-          <h3>ICT Training</h3>
-          <p>
-            Computer skills training and technology guidance
-            for students, teams and individuals.
-          </p>
-        </article>
-
+          <div class="hero-feature">
+            <div class="feature-icon">📚</div>
+            <div>
+              <strong>Skills and Training</strong>
+              <p>Technology guidance to support digital learning.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="about" id="about">
-      <h2 class="section-title">About Us</h2>
+    <!-- Services -->
 
-      <p>
-        Haron Tech Solutions is focused on making technology
-        useful, accessible and effective. Our aim is to offer
-        quality IT services, practical solutions and reliable
-        support for our clients in Kenya and beyond.
-      </p>
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What We Do</span>
+          <h2>Our Technology Services</h2>
+          <p>
+            Explore our technology services designed to help you
+            work smarter, solve problems and move your ideas forward.
+          </p>
+        </div>
 
-      <a href="#contact" class="btn">Work With Us</a>
+        <div class="service-grid">
+          <article class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>
+              Responsive websites for businesses, organisations,
+              professionals and personal projects. We focus on clear
+              design, usability and mobile-friendly experiences.
+            </p>
+            <a class="text-link" href="#contact">Discuss a website →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Software Development</h3>
+            <p>
+              Practical software concepts and applications to help
+              organise information, simplify workflows and address
+              specific user or business requirements.
+            </p>
+            <a class="text-link" href="#contact">Discuss software →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🗄️</div>
+            <h3>Database Management</h3>
+            <p>
+              Database planning, design, data organisation, basic
+              reporting and maintenance guidance for structured
+              information management.
+            </p>
+            <a class="text-link" href="#contact">Ask about databases →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛠️</div>
+            <h3>Computer and IT Support</h3>
+            <p>
+              Assistance with common computer problems, software
+              installation, troubleshooting, system maintenance
+              and general technology questions.
+            </p>
+            <a class="text-link" href="#contact">Request IT support →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Networking Solutions</h3>
+            <p>
+              Guidance on network setup, connectivity, device
+              configuration and basic network troubleshooting
+              for homes, learning environments and small offices.
+            </p>
+            <a class="text-link" href="#contact">Discuss networking →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">☁️</div>
+            <h3>Cloud Solutions</h3>
+            <p>
+              Help understanding cloud platforms, online file
+              sharing, backup practices and digital collaboration
+              tools for everyday work.
+            </p>
+            <a class="text-link" href="#contact">Explore cloud services →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📚</div>
+            <h3>ICT Training</h3>
+            <p>
+              Technology learning and computer skills guidance
+              covering digital literacy, office applications,
+              programming basics and internet use.
+            </p>
+            <a class="text-link" href="#contact">Ask about training →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔒</div>
+            <h3>Digital Safety Guidance</h3>
+            <p>
+              Practical guidance on strong passwords, software
+              updates, safe browsing, backups and responsible
+              handling of digital information.
+            </p>
+            <a class="text-link" href="#contact">Ask a question →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧠</div>
+            <h3>IT Consultancy</h3>
+            <p>
+              Help identifying technology needs, planning small
+              IT projects and choosing suitable tools for your
+              work, learning or business activities.
+            </p>
+            <a class="text-link" href="#contact">Discuss your needs →</a>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="contact" id="contact">
-      <h2 class="section-title">Contact Us</h2>
+    <!-- About, mission and vision -->
 
-      <p class="section-intro">
-        Have a project or need technical assistance?
-        Get in touch with Haron Tech Solutions.
-      </p>
+    <section class="section section-light" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <span class="eyebrow">About Our Business</span>
+          <h2>Making Technology Useful and Accessible</h2>
 
-      <div class="contact-box">
-        <p><strong>Business:</strong> Haron Tech Solutions</p>
+          <p>
+            Haron Tech Solutions is a technology-focused business
+            based in Kenya, aiming to make digital tools more useful,
+            accessible and effective for individuals and organisations.
+          </p>
 
-        <p><strong>Location:</strong> Kenya</p>
+          <p>
+            Our focus is on practical technology solutions, clear
+            communication and helping clients understand the tools
+            they use. We aim to build lasting relationships through
+            dependable support and continuous learning.
+          </p>
 
-        <p>
-          <strong>Phone:</strong>
-          <a href="tel:0114443674">0114443674</a>
+          <ul class="check-list">
+            <li>Solutions focused on real needs</li>
+            <li>Clear and helpful communication</li>
+            <li>Attention to usability and quality</li>
+            <li>Continuous learning and improvement</li>
+          </ul>
+
+          <a class="btn" href="#contact">Work With Us</a>
+        </div>
+
+        <div class="about-panel">
+          <h3>Our Mission</h3>
+          <p>
+            To provide accessible, practical and affordable
+            technology solutions that help individuals and
+            organisations achieve their digital goals.
+          </p>
+
+          <h3>Our Vision</h3>
+          <p>
+            To grow into a trusted technology solutions provider
+            recognised for useful digital services, responsible
+            innovation and customer-focused support.
+          </p>
+
+          <h3>Our Values</h3>
+          <p>
+            Reliability, integrity, continuous improvement,
+            accessibility and customer satisfaction guide our
+            approach to technology.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reasons to choose us -->
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Why Haron Tech Solutions</span>
+          <h2>A Practical Approach to Technology</h2>
+          <p>
+            We aim to make technology easier to understand,
+            use and maintain.
+          </p>
+        </div>
+
+        <div class="reason-grid">
+          <article class="reason">
+            <div class="card-icon">🎯</div>
+            <h3>Needs-Focused</h3>
+            <p>We start by understanding the problem and the result you need.</p>
+          </article>
+
+          <article class="reason">
+            <div class="card-icon">🤝</div>
+            <h3>Clear Communication</h3>
+            <p>We aim to explain solutions and next steps in understandable terms.</p>
+          </article>
+
+          <article class="reason">
+            <div class="card-icon">📱</div>
+            <h3>Modern Experiences</h3>
+            <p>We value responsive layouts and accessible digital experiences.</p>
+          </article>
+
+          <article class="reason">
+            <div class="card-icon">🔧</div>
+            <h3>Practical Support</h3>
+            <p>Our goal is to provide useful guidance and solutions for real tasks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work process -->
+
+    <section class="section section-light" id="process">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">How We Work</span>
+          <h2>A Simple Service Process</h2>
+          <p>
+            A clear process helps us understand your needs and
+            plan the next steps for your project.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <div class="step-number">1</div>
+            <h3>Understand</h3>
+            <p>Tell us about your project, challenge or technology needs.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">2</div>
+            <h3>Plan</h3>
+            <p>Discuss possible solutions, requirements and priorities.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">3</div>
+            <h3>Develop or Assist</h3>
+            <p>Agree on the work to be completed and the expected deliverables.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">4</div>
+            <h3>Review</h3>
+            <p>Review the result and discuss any agreed follow-up support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio: illustrative samples, not claimed client work -->
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Portfolio Concepts</span>
+          <h2>Sample Projects</h2>
+          <p>
+            These illustrative project concepts show the types of
+            digital solutions that can be planned and developed.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="project">
+            <div class="project-visual">
+              <span>🌐</span>
+              <strong>Business Website</strong>
+              <p>Web design concept</p>
+            </div>
+            <div class="project-body">
+              <span class="sample-label">Illustrative sample</span>
+              <h3>Small Business Website</h3>
+              <p>
+                A sample responsive website concept with service
+                information, business details and customer enquiries.
+              </p>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <span>📊</span>
+              <strong>Information System</strong>
+              <p>Database concept</p>
+            </div>
+            <div class="project-body">
+              <span class="sample-label">Illustrative sample</span>
+              <h3>Student Records System</h3>
+              <p>
+                A sample concept for organising student details,
+                course records and academic information in a
+                structured database.
+              </p>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual">
+              <span>🧾</span>
+              <strong>Business Management</strong>
+              <p>Software concept</p>
+            </div>
+            <div class="project-body">
+              <span class="sample-label">Illustrative sample</span>
+              <h3>Stock Management Application</h3>
+              <p>
+                A sample application concept for tracking products,
+                stock movements and basic inventory reports.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="portfolio-note">
+          These are sample concepts, not claims of completed
+          client projects. Replace them with actual work as your
+          portfolio grows.
         </p>
+      </div>
+    </section>
 
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:omwegaharon@gmail.com">
-            omwegaharon@gmail.com
-          </a>
-        </p>
+    <!-- Call to action -->
 
-        <form id="contact-form">
-          <input name="name" placeholder="Your name" required>
+    <section class="section section-light">
+      <div class="container">
+        <div class="cta-banner">
+          <span class="eyebrow">Have an Idea?</span>
+          <h2>Let's Discuss Your Next Project</h2>
+          <p>
+            Whether you need a website, software guidance,
+            computer support or ICT training, get in touch
+            to discuss your requirements.
+          </p>
+          <a class="btn" href="#contact">Start an Enquiry →</a>
+        </div>
+      </div>
+    </section>
 
-          <input name="email" type="email"
-                 placeholder="Your email address" required>
+    <!-- Frequently asked questions -->
 
-          <select name="service" required>
-            <option value="">Select a service</option>
-            <option>Web Development</option>
-            <option>Software Development</option>
-            <option>Database Management</option>
-            <option>Cloud Solutions</option>
-            <option>IT Support</option>
-            <option>ICT Training</option>
-            <option>Other</option>
-          </select>
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">FAQs</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Some useful information before you get in touch.</p>
+        </div>
 
-          <textarea name="message"
-                    placeholder="Write your message here"
-                    required></textarea>
+        <div class="faq-list">
+          <details>
+            <summary>What services does Haron Tech Solutions offer?</summary>
+            <p>
+              Our listed services include web development, software
+              solutions, database management, computer support,
+              networking guidance, cloud solutions and ICT training.
+              Availability can be discussed for each request.
+            </p>
+          </details>
 
-          <button class="btn" type="submit">
-            Send Enquiry
-          </button>
-        </form>
+          <details>
+            <summary>How do I request a service?</summary>
+            <p>
+              Use the contact form, email omwegaharon@gmail.com,
+              call 0114443674 or contact us through the WhatsApp
+              button to describe your needs.
+            </p>
+          </details>
 
-        <p style="font-size: 13px; color: #61738a;">
-          Submitting this form opens your email application.
-          It does not store messages on this website.
-        </p>
+          <details>
+            <summary>Do you work with individuals and businesses?</summary>
+            <p>
+              The website is intended for enquiries from individuals,
+              students, schools and businesses. Discuss your specific
+              requirements with us to determine whether we can help.
+            </p>
+          </details>
+
+          <details>
+            <summary>How much do your services cost?</summary>
+            <p>
+              Costs depend on the scope, requirements and work
+              involved. Contact us with details of your project
+              to discuss the appropriate scope and pricing.
+            </p>
+          </details>
+
+          <details>
+            <summary>Does the website contact form store messages?</summary>
+            <p>
+              No. This static website prepares an email using your
+              device's default email application. It does not store
+              or send form submissions through a website server.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+
+    <section class="section section-light" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Get in Touch</span>
+          <h2>Contact Haron Tech Solutions</h2>
+          <p>
+            Describe your project or technology challenge.
+            We look forward to hearing from you.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let's Talk Technology</h3>
+            <p>
+              Contact us using the details below to discuss
+              your requirements.
+            </p>
+
+            <div class="contact-item">
+              <small>Business name</small>
+              <strong>Haron Tech Solutions</strong>
+            </div>
+
+            <div class="contact-item">
+              <small>Phone</small>
+              <a href="tel:0114443674">0114443674</a>
+            </div>
+
+            <div class="contact-item">
+              <small>Email</small>
+              <a href="mailto:omwegaharon@gmail.com">
+                omwegaharon@gmail.com
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <small>Location</small>
+              <strong>Kenya</strong>
+            </div>
+
+            <div style="margin-top: 24px;">
+              <a class="btn"
+                 href="https://wa.me/254114443674?text=Hello%20Haron%20Tech%20Solutions%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send an Enquiry</h3>
+            <p>
+              Complete the form to prepare an enquiry email.
+              Your email application will open when you submit.
+            </p>
+
+            <form id="contact-form">
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Your name</label>
+                  <input id="name" name="name"
+                         autocomplete="name" required
+                         placeholder="Enter your name">
+                </div>
+
+                <div class="field">
+                  <label for="email">Email address</label>
+                  <input id="email" name="email"
+                         type="email" autocomplete="email"
+                         required placeholder="you@example.com">
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="service">Service required</label>
+                <select id="service" name="service" required>
+                  <option value="">Choose a service</option>
+                  <option>Web Development</option>
+                  <option>Software Development</option>
+                  <option>Database Management</option>
+                  <option>Computer and IT Support</option>
+                  <option>Networking Solutions</option>
+                  <option>Cloud Solutions</option>
+                  <option>ICT Training</option>
+                  <option>Digital Safety Guidance</option>
+                  <option>IT Consultancy</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Tell us about your needs</label>
+                <textarea id="message" name="message"
+                          required
+                          placeholder="Describe your project or question..."></textarea>
+              </div>
+
+              <button class="btn" type="submit">
+                Prepare Email →
+              </button>
+
+              <p class="form-note">
+                This form opens your email application. It does not
+                send or save information automatically.
+              </p>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
+
   <footer>
-    <p><strong>Haron Tech Solutions</strong></p>
-    <p>Your Vision · Our Technology</p>
-    <p>Kenya | 0114443674</p>
-    <p>
-      &copy; <span id="year"></span>
-      Haron Tech Solutions. All rights reserved.
-    </p>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Haron Tech Solutions</div>
+          <p>
+            Practical technology solutions, digital support and
+            ICT guidance for individuals and organisations in Kenya.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#portfolio">Sample Projects</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact Information</h3>
+          <ul class="footer-links">
+            <li><a href="tel:0114443674">0114443674</a></li>
+            <li><a href="mailto:omwegaharon@gmail.com">
+              omwegaharon@gmail.com</a></li>
+            <li>Kenya</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Your Vision · Our Technology</p>
+        <p>
+          &copy; <span id="year"></span> Haron Tech Solutions.
+          All rights reserved.
+        </p>
+      </div>
+    </div>
   </footer>
+
+  <!-- Floating WhatsApp button -->
+
+  <a class="whatsapp-float"
+     href="https://wa.me/254114443674?text=Hello%20Haron%20Tech%20Solutions%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contact Haron Tech Solutions on WhatsApp">
+    <span class="whatsapp-icon">◉</span>
+    <span>WhatsApp Us</span>
+  </a>
 
   <script>
     document.getElementById("year").textContent =
